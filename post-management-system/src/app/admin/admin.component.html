@@ -1,0 +1,65 @@
+<section class="login p-relative common-img-bg">
+    
+    <div class="container">
+        <div class="row align-items-center">
+         
+          <div class="col-lg-5 mx-auto col-md-12">
+            <div class="mb-4 mt-4 text-center">
+                <img src="assets/Logo/roaddd.png" width="400px" alt="logo.png" />
+            </div>
+            <form [formGroup]="loginForm" class="mt-2 currency-form">
+                    <div class="row">
+                          <div class="col-12">
+                              <div class="sign-in m-0">
+                                  <div class="m-b-30">
+                                    <h4>Log In</h4>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="control-label">Username</label>
+                                      <input type="email" class="form-control email" formControlName="email" spellcheck="false" autocomplete="off"
+                                      placeholder="" [ngClass]="{'is-invalid': submittedd && f.email.errors}">
+                                          <div *ngIf="submittedd && f.email.errors" class="invalid-feedback">
+                                              <div *ngIf="f.email.errors.required">Email is required</div>
+                                              <div *ngIf="f.email.errors.email">Invalid email</div>
+                                          </div>
+                                  </div> 
+                                  <div class="form-group">
+                                      <label class="control-label w-100">Password </label>
+                                      <input type="password" id="password-field" maxlength="25" class="form-control" value="" placeholder="Password" formControlName="password"
+                                      placeholder="" [ngClass]="{'is-invalid': submittedd && f.password.errors}">
+                                      <span toggle="#password-field" class="fa fa-fw fa-eye-slash field-icon password toggle-password"></span>
+                                      <div *ngIf="submittedd && f.password.errors" class="invalid-feedback">
+                                          <div *ngIf="f.password.errors.required">Password is required</div>
+                                          <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
+                                      </div> 
+                                  </div> 
+                                  <div class="form-group mt-2 rember">
+                                      <ul>
+                                          <li>
+                                              <div class="checkbox-fade fade-in-primary d-">
+                                                  <label>
+                                                      <input type="checkbox" value="">
+                                                      <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                      <span class="text-inverse">Remember me</span>
+                                                  </label>
+                                              </div>
+                                          </li>
+                                         <li>
+                                            <a class="forgot-pass float-right" routerLink="/forgot-password">Forgot Password ?</a>
+                                         </li>
+                                      </ul>
+                                  </div> 
+                                  <div>
+                                        <button (click)="onSubmit()"  class="btn btn-block btn-filled form-btn">                
+                                            <span class="bh"></span> <span>Log In <i class="fa fa-arrow-right"></i></span>
+                                       </button>  
+                                      <!-- <button (click)="onSubmit()" routerLink="/home/dashboard" class="btn btn-primary btn-auth-color btn-md btn-block">LOG IN</button> -->
+                                  </div>
+                              </div>   
+                          </div>
+                    </div>
+              </form>
+          </div>            
+        </div>
+      </div>
+  </section>
