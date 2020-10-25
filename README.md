@@ -1,2 +1,2 @@
-# PostManagementSystem
-For Interview Purpose
+# PostManagementSystem-Web
+Web panel
