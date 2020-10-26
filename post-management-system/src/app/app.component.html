@@ -1,15 +1,34 @@
-<div class="container">
-  <nav class="navbar navbar-light bg-light justify-content-between">
-    <a class="navbar-brand"> <img src="assets/Logo/bootstrap.png" width="100px"> </a>
-    <a class="navbar-brand" routerLink="/admin">Admin</a>
-    <a class="navbar-brand" routerLink="/user">User</a>
-    <a class="navbar-brand" routerLink="/admin/user-management">User management</a>
-    <a class="navbar-brand" routerLink="/user">task  management</a>
+<section class="bg-blue">
+  <nav class="navbar navbar-light bg-white navbar-static-top navbar-expand-lg header-sticky">
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse"><i class="fas fa-align-left"></i></button>
+    <a class="navbar-brand"> <img src="assets/Logo/bootstrap.png"> </a>
+    <div class="navbar-collapse collapse justify-content-end header_nav">
+      <ul class="nav navbar-nav">
+        <li class="nav-item dropdown active">
+          <a class="navbar-brand" routerLink="/admin">Admin</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="navbar-brand" routerLink="/user">User</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="navbar-brand" routerLink="/admin/user-management">User management</a>
+        </li>
+        <li class="nav-item dropdown">  
+          <a class="navbar-brand" routerLink="/admin/task-management">Task  management</a>
+        </li>
+        <li class="nav-item dropdown">  
+          <a class="navbar-brand" routerLink="/admin/entry">Entry Update</a>
+        </li>
+      </ul>
+   </div>
     <form class="form-inline">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </nav>
+<div class="container-fluid">
+ 
   <br> <br>
   <router-outlet></router-outlet>
 </div>
+</section>

@@ -1,0 +1,28 @@
+.card {
+    border-radius: 5px;
+    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    margin-bottom: 30px;
+}
+.m-b-30 {
+    margin-bottom: 30px!important;
+}
+.main-body .page-wrapper {
+    padding: 1.2rem;
+    transition: all ease-in 0.3s;
+}
+.pcoded-inner-content {
+    padding: 10px;
+}
+.main-body .page-wrapper .page-header-title {
+    display: inline-flex;
+    align-items: center;
+    color: #919aa3;
+}
+.btn-primary, .sweet-alert button.confirm, .wizard>.actions a {
+    background-color: #e51918;
+    border-color: #e51918;
+    color: #fff !important;
+    cursor: pointer;
+    transition: all ease-in 0.3s;
+}

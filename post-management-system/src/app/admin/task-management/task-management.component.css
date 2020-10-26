@@ -1,0 +1,7 @@
+.btn-primary, .sweet-alert button.confirm, .wizard>.actions a {
+    background-color: #e51918;
+    border-color: #e51918;
+    color: #fff !important;
+    cursor: pointer;
+    transition: all ease-in 0.3s;
+}

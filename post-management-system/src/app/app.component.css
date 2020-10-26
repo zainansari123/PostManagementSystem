@@ -1,6 +1,29 @@
 .example-spacer {
     flex: 1 1 auto;
   }
-.container{
+ 
+.bg-blue{
   background-color: #F0F5F8;
-}  
+}
+.header_nav ul li{
+  padding-right: 40px;
+}
+.header_nav ul li a{
+  font-size: 18px;
+}
+.bg-white {
+  background-color: #fff!important;
+  padding: 10px 40px;
+}
+.navbar-brand{
+  flex: 0 0 180px;
+}
+.navbar-brand img{
+  width: 150px;
+}
+.header_nav{
+  justify-content: flex-start !important;
+}
+section{
+  padding-bottom: 54px;
+}

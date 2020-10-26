@@ -29,7 +29,7 @@
                                       <label class="control-label w-100">Password </label>
                                       <input type="password" id="password-field" maxlength="25" class="form-control" value="" placeholder="Password" formControlName="password"
                                       placeholder="" [ngClass]="{'is-invalid': submittedd && f.password.errors}">
-                                      <span toggle="#password-field" class="fa fa-fw fa-eye-slash field-icon password toggle-password"></span>
+                                      <span toggle="#password-field" class="fa fa-fw fa-eye-slash field-icon password toggle-password login-eye"></span>
                                       <div *ngIf="submittedd && f.password.errors" class="invalid-feedback">
                                           <div *ngIf="f.password.errors.required">Password is required</div>
                                           <div *ngIf="f.password.errors.minlength">Password must be at least 8 characters</div>
@@ -45,8 +45,10 @@
                                               </div>
                                   </div> 
                                   <div>
-                                        <button (click)="onSubmit()"  class="btn btn-block btn-primary">                
-                                            <span class="bh"></span> <span>Log In <i class="fa fa-arrow-right"></i></span>
+                                        <button (click)="onSubmit()"  class="btn btn-block btn-primary login-btn">                
+                                            <span class="bh"></span> <span>Log In 
+                                                <!-- <i class="fa fa-arrow-right"></i> -->
+                                            </span>
                                        </button>  
                                       <!-- <button (click)="onSubmit()" routerLink="/home/dashboard" class="btn btn-primary btn-auth-color btn-md btn-block">LOG IN</button> -->
                                   </div>

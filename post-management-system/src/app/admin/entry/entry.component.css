@@ -1,0 +1,12 @@
+.form-check-label {
+    margin-bottom: 15px;
+}
+.box{
+    padding: 14px;
+    box-shadow: 1px 0px 8px 0px #ddd;
+    border-radius: 4px;
+}
+.box i{
+    font-size: 26px;  
+    margin-bottom: 8px;
+}

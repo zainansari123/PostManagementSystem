@@ -12,9 +12,37 @@ section{
     color: black;
 }
 .heading{
-    font-weight: 200;
-    font-size: 30px;
-    color: black;
+    font-weight: 400;
+    font-size: 22px;
+    color: #000;
     cursor: pointer;
 }
 .heading:hover{color: #69C3BA;}
+.form-control{
+    height: 45px;
+    background-color: #bfc5ef7a;
+    border: 1px solid #673AB7;
+    border-radius: 12px;
+}
+.login-btn{
+    background: #bbdad1;
+    border: 1px solid #bbdad1;
+    color: #000;
+    font-weight: 500;
+    font-size: 16px;
+}
+.form-group{
+  position: relative;
+}
+.form-control:focus{
+    background-color: #bfc5ef7a;
+    border: 1px solid #673AB7;
+    border-radius: 12px;
+    box-shadow: unset;
+    
+}
+.login-eye{
+    position: absolute;
+    top: 42px;
+    right: 15px;
+}
