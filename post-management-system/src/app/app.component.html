@@ -1,9 +1,15 @@
-<h1>
-  {{title}}
-</h1>
-
-<button routerLink="/admin">Admin Login</button>
-<button routerLink="/user">User Login</button>
-<button routerLink="">Home</button>
-
-<router-outlet></router-outlet>
+<div class="container">
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand"> <img src="assets/Logo/bootstrap.png" width="100px"> </a>
+    <a class="navbar-brand" routerLink="/admin">Admin</a>
+    <a class="navbar-brand" routerLink="/user">User</a>
+    <a class="navbar-brand" routerLink="/admin/user-management">User management</a>
+    <a class="navbar-brand" routerLink="/user">task  management</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+  <br> <br>
+  <router-outlet></router-outlet>
+</div>

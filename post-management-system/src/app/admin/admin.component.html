@@ -5,22 +5,24 @@
          
           <div class="col-lg-5 mx-auto col-md-12">
             <div class="mb-4 mt-4 text-center">
-                <img src="assets/Logo/roaddd.png" width="400px" alt="logo.png" />
+                <img src="assets/Logo/bootstrap.png" width="300px" alt="logo.png" />
             </div>
             <form [formGroup]="loginForm" class="mt-2 currency-form">
                     <div class="row">
                           <div class="col-12">
                               <div class="sign-in m-0">
-                                  <div class="m-b-30">
-                                    <h4>Log In</h4>
-                                  </div>
+                                <ul class="tab list-inline">
+                                    <li routerLink="/admin" class="list-inline-item">Admin Login</li>
+                                    <li routerLink="/user" class="list-inline-item">User Login</li>
+                                  </ul>
+                                  <h3 class="heading text-center">Admin Login</h3>
                                   <div class="form-group">
                                       <label class="control-label">Username</label>
-                                      <input type="email" class="form-control email" formControlName="email" spellcheck="false" autocomplete="off"
-                                      placeholder="" [ngClass]="{'is-invalid': submittedd && f.email.errors}">
-                                          <div *ngIf="submittedd && f.email.errors" class="invalid-feedback">
-                                              <div *ngIf="f.email.errors.required">Email is required</div>
-                                              <div *ngIf="f.email.errors.email">Invalid email</div>
+                                      <input type="text" class="form-control" formControlName="username" spellcheck="false" autocomplete="off"
+                                      placeholder="" [ngClass]="{'is-invalid': submittedd && f.username.errors}">
+                                          <div *ngIf="submittedd && f.username.errors" class="invalid-feedback">
+                                              <div *ngIf="f.username.errors.required">username is required</div>
+                                              <div *ngIf="f.username.errors.username">Invalid username</div>
                                           </div>
                                   </div> 
                                   <div class="form-group">
@@ -34,23 +36,16 @@
                                       </div> 
                                   </div> 
                                   <div class="form-group mt-2 rember">
-                                      <ul>
-                                          <li>
                                               <div class="checkbox-fade fade-in-primary d-">
                                                   <label>
                                                       <input type="checkbox" value="">
                                                       <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                      <span class="text-inverse">Remember me</span>
+                                                      <span class="text-inverse"> Remember me</span>
                                                   </label>
                                               </div>
-                                          </li>
-                                         <li>
-                                            <a class="forgot-pass float-right" routerLink="/forgot-password">Forgot Password ?</a>
-                                         </li>
-                                      </ul>
                                   </div> 
                                   <div>
-                                        <button (click)="onSubmit()"  class="btn btn-block btn-filled form-btn">                
+                                        <button (click)="onSubmit()"  class="btn btn-block btn-primary">                
                                             <span class="bh"></span> <span>Log In <i class="fa fa-arrow-right"></i></span>
                                        </button>  
                                       <!-- <button (click)="onSubmit()" routerLink="/home/dashboard" class="btn btn-primary btn-auth-color btn-md btn-block">LOG IN</button> -->

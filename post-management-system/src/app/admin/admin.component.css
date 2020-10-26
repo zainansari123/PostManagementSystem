@@ -1,3 +1,20 @@
 section{
-    background-color: aliceblue;
+    background-color: #F0F5F8;
 }
+.tab li{
+    font-weight: 500;
+    font-size: larger;
+    margin-left: 20%;
+    color: #69C3BA;
+    cursor: pointer;
+}
+.tab li:hover{
+    color: black;
+}
+.heading{
+    font-weight: 200;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+.heading:hover{color: #69C3BA;}

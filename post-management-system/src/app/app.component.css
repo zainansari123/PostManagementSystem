@@ -1,4 +1,6 @@
 .example-spacer {
     flex: 1 1 auto;
   }
-  
+.container{
+  background-color: #F0F5F8;
+}  
