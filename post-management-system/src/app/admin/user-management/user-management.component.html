@@ -9,7 +9,7 @@
           </div>
           <div class="col-sm-12 col-lg-3">
              <div class="add-categorybtn text-right">
-                 <button class="btn btn-primary" data-toggle="modal" data-target="#add">Create New</button>
+                 <button class="btn btn-primary" (click)="openModal('','1')">Create New</button>
              </div>
           </div>
         </div>
@@ -23,18 +23,25 @@
                         <thead>
                             <tr>
                               <th>User Name</th>
-                              <th>Mobile</th>
                               <th>Email</th>
+                              <th>Profile</th>
+                              <th>Mobile</th>
+                              <th>Gender</th>
+                              <th>Address</th>
                               <th class="wpx-80 text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                              <td>Lorem Ipsum</td>
-                              <td>98767898767</td>
-                              <td>xyz@gmail.com</td>
+                            <tr *ngFor="let u of user_list; let i=index;">
+                              <td>{{u.username}}</td>
+                              <td>{{u.email}}</td>
+                              <td> <img src="{{baseurl}}{{u.profile_img}}" height="50" width="50" alt=""> </td>
+                              <td>{{u.country_code}}-{{u.mobile}}</td>
+                              <td>{{u.gender}}</td>
+                              <td>{{u.address}}</td>
+
                               <td class="text-center">
-                                <a data-toggle="modal" data-target="#edit-modal" class="text-success">
+                                <a (click)="openModal(u,'2')" class="text-success">
                                   <i class="fa fa-pencil"></i>
                                 </a>&nbsp;
                                 <a data-toggle="modal" data-target="#delete-modal" class="text-danger">
@@ -42,45 +49,7 @@
                                 </a>
                               </td>
                             </tr>
-                            <tr>
-                              <td>Lorem Ipsum</td>
-                              <td>98767898767</td>
-                              <td>xyz@gmail.com</td>
-                              <td class="text-center">
-                                <a data-toggle="modal" data-target="#edit-modal" class="text-success">
-                                  <i class="fa fa-pencil"></i>
-                                </a>&nbsp;
-                                <a data-toggle="modal" data-target="#delete-modal" class="text-danger">
-                                  <i class="fa fa-trash-o"></i>
-                                </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>Lorem Ipsum</td>
-                              <td>98767898767</td>
-                              <td>xyz@gmail.com</td>
-                              <td class="text-center">
-                                <a data-toggle="modal" data-target="#edit-modal" class="text-success">
-                                  <i class="fa fa-pencil"></i>
-                                </a>&nbsp;
-                                <a data-toggle="modal" data-target="#delete-modal" class="text-danger">
-                                  <i class="fa fa-trash-o"></i>
-                                </a>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>Lorem Ipsum</td>
-                              <td>98767898767</td>
-                              <td>xyz@gmail.com</td>
-                              <td class="text-center">
-                                <a data-toggle="modal" data-target="#edit-modal" class="text-success">
-                                  <i class="fa fa-pencil"></i>
-                                </a>&nbsp;
-                                <a data-toggle="modal" data-target="#delete-modal" class="text-danger">
-                                  <i class="fa fa-trash-o"></i>
-                                </a>
-                              </td>
-                            </tr>
+                            
                             </tbody>
                       </table>
                     </div>
@@ -92,3 +61,111 @@
     </div>
   </div>
 </div>
+
+<!-- Start userForm -->
+<div class="modal fade" id="user-modal">
+	<div class="modal-dialog modal-md">
+		<div class="modal-content">
+			<div class="modal-header pb-0">
+				<button type="button" data-dismiss="modal" class="close">
+					<img src="assets/Logo/cross.png"  height="10" width="10"/>
+				</button>
+			</div>
+			<div class="modal-body text-center pt-0">
+				<div class="mb-4">
+					<h1>Create User</h1>
+				</div>
+				<form class="form-material" [formGroup]="userForm" autocomplete="off" (submit)="submit()">
+					<mat-form-field class="col-sm-6 form-group input-has-value">
+						<mat-label>Username</mat-label>
+            <input matInput class="form-control" formControlName="username"
+            [ngClass]="{'is-invalid': submitted && f.username.errors}">
+						<div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+							<mat-error *ngIf="f.username.errors.required">username is required</mat-error>
+						</div>
+          </mat-form-field>
+          <mat-form-field class="col-sm-6 form-group input-has-value">
+						<mat-label>Password</mat-label>
+            <input matInput class="form-control" formControlName="password"
+            [ngClass]="{'is-invalid': submitted && f.password.errors}">
+						<div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+							<mat-error *ngIf="f.password.errors.required">password is required</mat-error>
+						</div>
+          </mat-form-field>
+          <mat-form-field class="col-sm-6 form-group input-has-value">
+						<mat-label>First Name</mat-label>
+            <input matInput class="form-control" formControlName="first_name"
+            [ngClass]="{'is-invalid': submitted && f.first_name.errors}">
+						<div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+							<mat-error *ngIf="f.first_name.errors.required">first_name is required</mat-error>
+						</div>
+          </mat-form-field>
+          <mat-form-field class="col-sm-6 form-group input-has-value">
+						<mat-label>Last Name</mat-label>
+            <input matInput class="form-control" formControlName="last_name"
+            [ngClass]="{'is-invalid': submitted && f.last_name.errors}">
+						<div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+							<mat-error *ngIf="f.last_name.errors.required">last_name is required</mat-error>
+						</div>
+          </mat-form-field>
+          <mat-form-field class="col-sm-6 form-group input-has-value">
+						<mat-label>Email</mat-label>
+            <input matInput class="form-control" formControlName="email"
+            [ngClass]="{'is-invalid': submitted && f.email.errors}">
+						<div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <mat-error *ngIf="f.email.errors.required">Email is required</mat-error>
+							<mat-error *ngIf="f.email.errors.email">Please enter valid email</mat-error>
+						</div>
+          </mat-form-field>
+          <mat-form-field class="col-sm-6 form-group input-has-value">
+						<mat-label>Gender</mat-label>
+            <input matInput class="form-control" formControlName="gender"
+            [ngClass]="{'is-invalid': submitted && f.gender.errors}">
+						<div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+							<mat-error *ngIf="f.gender.errors.required">gender is required</mat-error>
+						</div>
+          </mat-form-field>
+          <mat-form-field class="col-sm-6 form-group input-has-value">
+						<mat-label>Country Code</mat-label>
+            <input matInput class="form-control" formControlName="country_code"
+            [ngClass]="{'is-invalid': submitted && f.country_code.errors}">
+						<div *ngIf="submitted && f.country_code.errors" class="invalid-feedback">
+							<mat-error *ngIf="f.country_code.errors.required">country_code is required</mat-error>
+						</div>
+          </mat-form-field>
+          <mat-form-field class="col-sm-6 form-group input-has-value">
+						<mat-label>Mobile Number</mat-label>
+            <input matInput class="form-control" formControlName="mobile"
+            [ngClass]="{'is-invalid': submitted && f.mobile.errors}">
+						<div *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+							<mat-error *ngIf="f.mobile.errors.required">mobile is required</mat-error>
+						</div>
+          </mat-form-field>
+          <mat-form-field class="col-sm-12 form-group input-has-value">
+						<mat-label>Address</mat-label>
+            <textarea matInput class="form-control" formControlName="address"
+            [ngClass]="{'is-invalid': submitted && f.address.errors}"></textarea>
+						<div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+							<mat-error *ngIf="f.address.errors.required">address is required</mat-error>
+						</div>
+          </mat-form-field>
+          <div class="col-sm-12 form-group input-has-value">
+            <input type="file" class="form-control" (change)="singleFile($event)" formControlName="profile_img"
+            [ngClass]="{'is-invalid': submitted && f.profile_img.errors}">
+						<div *ngIf="submitted && f.profile_img.errors" class="invalid-feedback">
+							<mat-error *ngIf="f.profile_img.errors.required">profile_img is required</mat-error>
+						</div>
+					</div>
+					<!-- <div class="form-group">
+						<label >Enter Mobile/Email Address</label>
+						<input type="email" class="form-control"/>
+					</div> -->
+					<button class="btn btn-md btn-primary w-100 rounded-30" type="button" (click)="submit()">Create</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End userForm -->
+
+

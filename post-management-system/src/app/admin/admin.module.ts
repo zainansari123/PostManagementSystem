@@ -12,7 +12,6 @@ import { MatPaginatorModule,MatSortModule } from '@angular/material';
 import { MatFormFieldModule, MatInputModule,MatExpansionModule } from '@angular/material';
 import { EntryComponent } from './entry/entry.component';
 
-
 @NgModule({
   declarations: [AdminComponent, UserManagementComponent, TaskManagementComponent, WorkStatusComponent, EntryComponent],
   imports: [
